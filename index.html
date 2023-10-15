@@ -12,8 +12,32 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <nav></nav>
+    <header id="nav-menu" aria-label="navigation bar">
+      <div class="wrapper">
+        <div class="nav-start">
+          <a class="logo" href="/">
+            <img src="public/img/logo/logo.svg" width="35" height="35" alt="Inc Logo" />
+            <h1>StartupLanding</h1>
+          </a>
+        </div>
+
+        <div class="nav-end">
+          <nav class="menu">
+            <ul class="menu-bar">
+              <li><a class="nav-link" href="/">Jobs</a></li>
+              <li><a class="nav-link" href="/">Livestream</a></li>
+              <li><a class="nav-link" href="/">About</a></li>
+              <li><a class="nav-link" href="/">Jobs</a></li>
+              <li><a class="nav-link" href="/">Livestream</a></li>
+              <li><a class="nav-link" href="/">About</a></li>
+            </ul>
+          </nav>
+
+          <button id="hamburger" aria-label="hamburger" aria-haspopup="true" aria-expanded="false">
+            <i class="bx bx-menu" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </header>
     <!-- End Header -->
 
