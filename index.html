@@ -9,25 +9,36 @@
     <link rel="stylesheet" href="public/css/style.css" />
     <!-- Boxicons CSS -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Animate Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <nav class="navbar">
+    <header class="animate__bounce">
+      <nav id="navbar" class="navbar">
         <a href="#" class="nav-branding">
           <img src="public/img/logo/logo.svg" alt="" />
-          <span>Startup Landing</span>
+          <span>AgencyCreative</span>
         </a>
 
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="#" class="nav-link">Home</a>
+            <a href="#hero" class="nav-link active">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">About</a>
+            <a href="#features" class="nav-link">Features</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="#creative" class="nav-link">A Creative</a>
+          </li>
+          <li class="nav-item">
+            <a href="#customers" class="nav-link">Customers</a>
+          </li>
+          <li class="nav-item">
+            <a href="#work" class="nav-link">Work</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
           </li>
         </ul>
 
@@ -44,7 +55,7 @@
     <main>
       <div id="content">
         <!-- Article 1 -->
-        <article id="article-1" class="article-1">
+        <article id="hero" class="article-1">
           <div class="container">
             <div class="row">
               <div class="col">
@@ -64,7 +75,7 @@
         <!-- End Article 1 -->
 
         <!-- Article 2 -->
-        <article id="article-2" class="article-2">
+        <article id="features" class="article-2">
           <div class="container">
             <div class="heading">
               <h1>Go Beyond unlimited features</h1>
@@ -98,7 +109,7 @@
         <!-- End Article 2 -->
 
         <!-- Article 3 -->
-        <article id="article-3" class="article-3">
+        <article id="creative" class="article-3">
           <div class="container">
             <div class="row">
               <div class="col">
@@ -132,7 +143,7 @@
         <!-- End Article 3 -->
 
         <!-- Article 4 -->
-        <article id="article-4" class="article-4">
+        <article id="customers" class="article-4">
           <div class="container">
             <div class="row">
               <div class="col">
@@ -156,7 +167,7 @@
         <!-- End Article 4 -->
 
         <!-- Article 5 -->
-        <article id="article-5" class="article-5">
+        <article id="work" class="article-5">
           <div class="container">
             <div class="heading">
               <h1>Let’s meet how its work</h1>
@@ -190,7 +201,7 @@
         <!-- End Article 5 -->
 
         <!-- Article 6 -->
-        <aside id="article-6" class="article-6">
+        <!-- <aside id="article-6" class="article-6">
           <div class="container">
             <div class="heading">
               <h1>Meet our support team who always work hardly behind the scenes</h1>
@@ -220,7 +231,7 @@
               </div>
             </div>
           </div>
-        </aside>
+        </aside> -->
         <!-- End Article 6 -->
 
         <!-- article contact -->
@@ -333,7 +344,7 @@
         </div>
       </div>
       <div class="copyright">
-        <span>&copy; Copyright 2023 by Farhan Kamil </span>
+        <p>&copy; Copyright 2023 by <span>Farhan Kamil</span></p>
       </div>
     </footer>
     <!-- End Footer -->

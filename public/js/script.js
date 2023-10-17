@@ -14,6 +14,50 @@ document.querySelectorAll(".nav-link").forEach((e) =>
   })
 );
 
+// Scroll down to hide navbar -> Scroll up to show navbar
+const navBar = document.querySelector(".navbar");
+let prevScrollPos = window.scrollY;
+
+window.addEventListener("scroll", function () {
+  let currScrollPos = window.scrollY;
+
+  if (currScrollPos > prevScrollPos) {
+    navBar.style.transform = `translateY(-700%)`;
+  } else {
+    navBar.style.transform = `translateY(0%)`;
+  }
+
+  prevScrollPos = currScrollPos;
+});
+
+// Navbar Link Active
+let articles = document.querySelectorAll("article");
+let navLinks = document.querySelectorAll("ul li a");
+
+window.onscroll = () => {
+  articles.forEach((sec) => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 100;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute("id");
+
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach((links) => {
+        links.classList.remove("active");
+        document.querySelector("ul li a[href*=" + id + "]").classList.add("active");
+      });
+    }
+  });
+
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbar").style.background = "#ffffff";
+    document.getElementById("navbar").style.boxShadow = "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px";
+  } else {
+    document.getElementById("navbar").style.background = "none";
+    document.getElementById("navbar").style.boxShadow = "none";
+  }
+};
+
 // back to top
 const backToTopButton = document.querySelector("#back-to-top");
 
@@ -21,14 +65,12 @@ window.addEventListener("scroll", scrollFunction);
 
 function scrollFunction() {
   if (window.pageYOffset > 150) {
-    // Show backToTopButton
     if (!backToTopButton.classList.contains("btnEntrance")) {
       backToTopButton.classList.remove("btnExit");
       backToTopButton.classList.add("btnEntrance");
       backToTopButton.style.display = "block";
     }
   } else {
-    // Hide backToTopButton
     if (backToTopButton.classList.contains("btnEntrance")) {
       backToTopButton.classList.remove("btnEntrance");
       backToTopButton.classList.add("btnExit");

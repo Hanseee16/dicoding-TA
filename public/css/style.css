@@ -34,30 +34,33 @@ a {
   color: inherit;
 }
 
-/* header */
-header {
-  background-color: var(--primary);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
+.nav-menu .nav-link.active {
+  color: var(--secondary);
+  font-weight: 500;
 }
 
+/* navbar */
 .navbar {
   min-height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 4rem;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease;
 }
 
 .navbar .nav-branding {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 2rem;
-  font-weight: 500;
-  color: white;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary);
 }
 
 .navbar .nav-menu {
@@ -69,8 +72,8 @@ header {
 
 .nav-menu .nav-link {
   transition: 0.7s ease;
-  color: white;
-  font-size: 19px;
+  color: var(--primary);
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -90,7 +93,7 @@ header {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: white;
+  background-color: var(--primary);
 }
 
 @media (max-width: 768px) {
@@ -101,14 +104,15 @@ header {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 70px;
+    top: 65px;
     gap: 0;
     flex-direction: column;
-    background-color: #262626;
+    background-color: var(--white);
     width: 100%;
     text-align: center;
     transition: 0.3s;
     padding: 20px 0px;
+    box-shadow: var(--shadow);
   }
 
   .nav-menu.active {
@@ -145,7 +149,7 @@ header {
   font-size: 26px;
   width: 45px;
   height: 45px;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   cursor: pointer;
   outline: none;
   border: none;
@@ -157,7 +161,7 @@ header {
 
 #back-to-top:hover,
 #back-to-top:focus {
-  background-color: #183656;
+  background-color: #f81d3e;
   color: var(--white);
 }
 
@@ -248,7 +252,7 @@ header {
 
   .article-1 input {
     border-radius: 5px;
-    border: 1px solid #d4dae2;
+    border: 1px solid #c9c9c9;
     background: var(--white);
     width: 350px;
     height: 50px;
@@ -275,7 +279,7 @@ header {
     font-size: 19px;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.36);
+    box-shadow: var(--shadow);
   }
 
   .article-1 button:hover {
@@ -514,7 +518,8 @@ header {
     font-size: 17px;
     font-weight: 700;
     letter-spacing: 1.7px;
-    box-shadow: 2px 2px 15px 1px rgba(0, 0, 0, 0.36);
+    box-shadow: var(--shadow);
+    outline: none;
   }
 
   .contact a:hover {
@@ -532,7 +537,7 @@ header {
 
   footer .row {
     align-items: start;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
   }
 
   footer .col:nth-child(1) {
@@ -580,7 +585,7 @@ header {
 
   footer ul li a:hover {
     text-decoration: underline;
-    color: #5a5a5a;
+    color: var(--secondary);
     transition: all ease-in-out 0.2s;
   }
 
@@ -593,6 +598,11 @@ header {
 
   footer .copyright {
     text-align: center;
+    color: var(--primary);
+  }
+
+  footer .copyright span {
+    font-weight: 500;
   }
 }
 
@@ -1333,4 +1343,16 @@ header {
     width: 40px;
     height: 40px;
   }
+}
+
+/* Untuk perangkat mobile */
+@media only screen and (max-width: 767px) {
+  /* Gaya CSS khusus untuk perangkat mobile di bawah 768 piksel lebar */
+  /* Misalnya, mengatur lebar elemen atau mengubah ukuran teks */
+}
+
+/* Untuk perangkat tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Gaya CSS khusus untuk perangkat tablet dengan lebar antara 768 dan 1023 piksel */
+  /* Anda dapat menyesuaikan elemen-elemen tertentu untuk tampilan tablet di sini */
 }
