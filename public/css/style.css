@@ -34,150 +34,105 @@ a {
   color: inherit;
 }
 
-.btn {
-  display: block;
-  background-color: var(--primary-color);
-  color: var(--white);
-  text-align: center;
-  padding: 0.6rem 1.4rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 5px;
+/* header */
+header {
+  background-color: var(--primary);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
-.icon {
-  padding: 0.5rem;
-  background-color: var(--light-grey);
-  border-radius: 10px;
-}
-
-.logo {
-  margin-right: 1.5rem;
+.navbar {
+  min-height: 70px;
   display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo h1 {
-  font-size: 20px;
-}
-
-#nav-menu {
-  border-bottom: var(--border);
-}
-
-.wrapper {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  column-gap: 2rem;
-  height: 90px;
-  padding: 1.2rem 3rem;
+  align-items: center;
+  padding: 0 4rem;
 }
 
-.menu {
-  position: relative;
-  background: var(--white);
-}
-
-.menu-bar li:first-child ul:nth-child(1) {
-  border-right: var(--border);
-}
-
-.menu-bar li:nth-child(n + 2) ul:nth-child(1) {
-  border-bottom: var(--border);
-}
-
-.menu-bar .nav-link {
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: -0.6px;
-  padding: 0.3rem;
-  min-width: 60px;
-  margin: 0 0.6rem;
-}
-
-.menu-bar .nav-link:hover {
-  color: var(--primary-color);
-}
-
-.nav-start,
-.nav-end,
-.menu-bar {
+.navbar .nav-branding {
   display: flex;
   align-items: center;
+  gap: 8px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
 }
 
-#hamburger {
+.navbar .nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-menu .nav-link {
+  transition: 0.7s ease;
+  color: white;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.nav-menu .nav-link:hover {
+  color: var(--secondary);
+}
+
+.hamburger {
   display: none;
-  padding: 0.1rem;
-  margin-left: 1rem;
-  font-size: 1.9rem;
-  border: none;
-  background-color: transparent;
   cursor: pointer;
-  color: inherit;
 }
 
-@media (max-width: 1100px) {
-  #hamburger {
-    display: block;
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 15px;
   }
 
-  .wrapper {
-    padding: 1.2rem;
-  }
-
-  .menu {
-    display: none;
-    position: absolute;
-    top: 87px;
-    left: 0;
-    min-height: 100vh;
-    width: 100vw;
-  }
-
-  .menu-bar li:first-child ul:nth-child(1) {
-    border-right: none;
-    border-bottom: var(--border);
-  }
-
-  .menu.show {
-    display: block;
-  }
-
-  .menu-bar {
-    display: flex;
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
     flex-direction: column;
-    align-items: stretch;
-    row-gap: 1rem;
-    padding: 1rem;
+    background-color: #262626;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 20px 0px;
   }
 
-  .menu-bar .nav-link {
-    display: block;
-    justify-content: space-between;
-    text-align: center;
-    width: 100%;
-    font-weight: 600;
-    font-size: 1.2rem;
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu .nav-item {
     margin: 0;
   }
 
-  .menu-bar > li:not(:last-child) {
-    padding-bottom: 0.5rem;
-    border-bottom: var(--border);
-  }
-}
-
-@media (max-width: 600px) {
-  .right-wrapper {
-    display: none;
-  }
-
-  .menu-bar .nav-link {
+  .hamburger {
     display: block;
-    text-align: center;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 }
 
@@ -598,6 +553,10 @@ a {
     margin-bottom: 10px;
   }
 
+  footer .logo {
+    display: block;
+  }
+
   footer .logo p {
     color: #0f2137;
     font-size: 18px;
@@ -992,6 +951,10 @@ a {
     margin-bottom: 10px;
   }
 
+  footer .logo {
+    display: block;
+  }
+
   footer .logo p {
     color: #0f2137;
     font-size: 18px;
@@ -1308,14 +1271,19 @@ a {
   footer .col:nth-child(4),
   footer .col:nth-child(5) {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 
   footer .logo a:nth-child(1) {
     display: flex;
+    align-items: center;
     gap: 10px;
     color: #02073e;
     margin-bottom: 10px;
+  }
+
+  footer .logo {
+    display: block;
   }
 
   footer .logo p {
