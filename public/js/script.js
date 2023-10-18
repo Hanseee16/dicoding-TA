@@ -31,7 +31,7 @@ window.addEventListener("scroll", function () {
 });
 
 // Navbar Link Active
-let articles = document.querySelectorAll("article");
+let articles = document.querySelectorAll("article, aside");
 let navLinks = document.querySelectorAll("ul li a");
 
 window.onscroll = () => {
